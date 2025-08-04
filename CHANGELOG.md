@@ -27,6 +27,12 @@ This package, `flutter_enhanced_timetable`, is a fork of the original package be
 * Upgraded dependencies.
 * Upgraded Example project Gradle files to use the latest Android Gradle Plugin.
 
+### 📜 Documentation updates
+
+* Enhanced timezone handling documentation to clearly state that the package does not handle timezones
+* Added timezone limitation notice to package description and README features section
+* Clarified that all DateTime objects are treated as timezone-independent local times
+
 ## 0.0.0 · 2024-10-03
 
 ### 🎉 Initial Release

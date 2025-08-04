@@ -10,6 +10,7 @@ This package, `flutter_enhanced_timetable`, is a fork of the original `timetable
 
 - Customizable, animated calendar widget
 - Day, week, and month views
+- ⚠️ **Note:** This package does not handle timezones - see [General Information](#0-general-information) for details
 
 |                                       Navigation                                        |                                       Animation                                        |
 | :-------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: |
@@ -62,8 +63,18 @@ A Timetable widget that displays [`MonthWidget`]s in a page view.
 
 ### 0. General Information
 
-Timetable doesn't care about any time-zone related stuff.
-All supplied `DateTime`s must have `isUtc` set to `true`, but the actual time zone is then ignored when displaying events.
+#### ⚠️ Timezone Handling
+
+**This package does NOT handle timezones.** Timetable treats all times as timezone-independent local times.
+
+- All supplied `DateTime`s must have `isUtc` set to `true`, but the actual timezone is completely ignored when displaying events
+- Only the date and time components (year, month, day, hour, minute, second, millisecond) are used
+- No automatic timezone conversions are performed
+- If your app needs timezone support, you must handle timezone conversions in your application logic before passing data to the timetable widgets
+
+This design makes the package ideal for local calendar views where all users are in the same timezone, but unsuitable for multi-timezone applications without additional timezone handling.
+
+#### Date/Time Parameter Conventions
 
 Some date/time-related parameters also have special suffixes:
 
